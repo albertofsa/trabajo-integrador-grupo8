@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.menu {
+  background-color: #697750;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav li a {
+  color: #fff;
+}
+.fondopagina {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+/* esto es para hacer 3d el logo */
+.logo-container {  
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  perspective: 1000px;
+}
+
+.logo-container img {
+  width: 50%;
+  height: auto;
+  display: block;
+  animation: rotate 7s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(+360deg);
+  }
+}
+
+
+
+
+/* esto se uso para el gif animado */
+/* .fondopagina {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fondopagina img {
+  max-width: 100%;
+  height: auto;
+} */
+
+.imagen-redonda {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.card-img-top .imagen-redonda {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* estilo estrella para la viñeta */
+ul {
+  list-style-image: url(./images/star.svg);
+}
+
+/* efecto zoom para las cards  */
+.card-text:hover {
+  font-size: 1.2em;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 341px;
+  /* background-color: #ccc; */
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #f3f3f3, #d4dabe);
+  /* background-position: 951px 0;   */
+}
+
+.team ,h1  {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* crea una sombra detrás del texto */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); crea una sombra en la caja */
+  /* background-color: #fff; establece el color de fondo para que se vea la iluminación */
+  padding: 5px; /* añade un poco de espacio alrededor del texto para que se vea mejor el efecto */
+}
+
+
+
+.scroll-container {
+  height: 341px;
+  width: 35%;
+  overflow-y: scroll;
+  padding-right: 20px; /* para evitar que el texto se superponga al scrollbar */
+  line-height: 1.5;
+  border: 1px solid black;
+}
+
+.scroll-container > p:last-of-type {
+  margin-bottom: 100px; /* ajusta el offset para el último párrafo */
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  /* estilos para pantallas de 768px o más */
+  /* .image-container {
+    display: none;
+  } */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* estilos para pantallas entre 768px y 992px */
+}

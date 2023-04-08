@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 
@@ -16,18 +16,38 @@
 .navbar-nav li a {
   color: #fff;
 }
-.fondopagina {
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+
+}
+
+.carousel-item {
+  height: 100vh;
+}
+
+.descripcion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  position: relative;
-  text-align: center;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  font-size: 5rem;
+  text-align: center;  
 }
 
 /* esto es para hacer 3d el logo */
 .logo-container {  
   position: absolute;
-  top: 50%;
-  left: 58%;
+  top: 40vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
   max-width: 100%;
   perspective: 1000px;
@@ -37,7 +57,7 @@
   width: 50%;
   height: auto;
   display: block;
-  animation: rotate 7s linear infinite;
+  animation: rotate 10s linear infinite;
   transform-style: preserve-3d;
 }
 
@@ -46,52 +66,48 @@
     transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(+360deg);
+    transform: rotateY(360deg);
   }
 }
 
-
-
-
-/* esto se uso para el gif animado */
-/* .fondopagina {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.fondopagina img {
-  max-width: 100%;
-  height: auto;
-} */
-
 .imagen-redonda {
-  width: 200px;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #fff;
 }
 
+/* efecto elevacion para las cards  */
+.card .mb-3 .border-0 {
+  width: 31vh;
+  height: 38vh;
+  position: relative;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 330px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+  margin-top: 23px;
+
+}
 .card-img-top .imagen-redonda {
   transition: transform 0.2s ease-in-out;
 }
 
-.card-img-top:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 /* estilo estrella para la viñeta */
 ul {
   list-style-image: url(./images/star.svg);
-}
-
-/* efecto zoom para las cards  */
-.card-text:hover {
-  font-size: 1.2em;
-  transition: font-size 0.2s ease-in-out;
 }
 
 .banner {
@@ -113,8 +129,6 @@ ul {
   padding: 5px; /* añade un poco de espacio alrededor del texto para que se vea mejor el efecto */
 }
 
-
-
 .scroll-container {
   height: 341px;
   width: 35%;
@@ -122,11 +136,120 @@ ul {
   padding-right: 20px; /* para evitar que el texto se superponga al scrollbar */
   line-height: 1.5;
   border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* establecemos el borde con transparencia */
+  backdrop-filter: blur(5px); /* aplicamos el filtro de borde desenfocado */
 }
 
 .scroll-container > p:last-of-type {
   margin-bottom: 100px; /* ajusta el offset para el último párrafo */
 }
+
+/* estilos para el formulario de contacto */
+.input-group-text, .modal-content{
+  background-color: #e0e4d3;  
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+
+}
+
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:auto;
+  width:100%;
+  position:relative;
+}
+
+
+#row2columnas{
+  column-count: 2;
+}
+
+/* Estilo básico para el acordeón */
+.accordion {
+  max-width: 800px; /* Ancho máximo del acordeón */
+  margin: 0 auto; /* Centrar el acordeón en la página */
+}
+
+.accordion-item {
+  border: 1px solid #ddd; /* Borde del elemento del acordeón */
+  margin-bottom: 10px; /* Espacio entre elementos del acordeón */
+}
+
+.accordion-button {
+  background-color: #f9f9f9; /* Color de fondo del botón del acordeón */
+  color: #333; /* Color del texto del botón del acordeón */
+  border: none; /* Eliminar borde del botón del acordeón */
+  border-radius: 0; /* Eliminar borde redondeado del botón del acordeón */
+  font-size: 18px; /* Tamaño de fuente del botón del acordeón */
+  text-align: left; /* Alinear texto del botón del acordeón a la izquierda */
+  padding: 10px 20px; /* Espacio interno del botón del acordeón */
+  width: 100%; /* Ancho del botón del acordeón */
+}
+
+.accordion-button:focus {
+  outline: none; /* Eliminar contorno del botón del acordeón al hacer foco */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #eee; /* Cambiar color de fondo cuando el elemento del acordeón está abierto */
+}
+
+.accordion-body {
+  background-color: #fff; /* Color de fondo del contenido del acordeón */
+  color: #333; /* Color del texto del contenido del acordeón */
+  padding: 20px; /* Espacio interno del contenido del acordeón */
+  border-top: 1px solid #ddd; /* Borde superior del contenido del acordeón */
+}
+
+/* estilos del footer */
+.footer {
+  background-color: #f7efde;
+  padding: 10px;
+}
+.footer img {
+  background-color: brown;
+  max-width: 100%;
+}
+
+.footer p {
+  margin-top: 10px;
+}
+
+.list-inline-item {
+  margin-right: 20px;
+}
+
+.list-inline-item:last-child {
+  margin-right: 0;
+}
+
+.copy {
+  background-color: #95a274;
+  text-align: center;
+  color: #fff;
+  padding: 2px 0;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  /* estilos para pantallas de 768px o más */
+  /* .image-container {
+    display: none;
+  } */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* estilos para pantallas entre 768px y 992px */
+}
+
 
 
 
